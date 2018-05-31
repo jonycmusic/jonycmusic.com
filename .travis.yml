@@ -6,6 +6,7 @@ install:
 script:
 - yarn build
 deploy:
-  - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
-  provider: script
-  script: bash upload.sh
+  - provider: script
+    script: bash upload.sh
+    on:
+      all_branches: true
