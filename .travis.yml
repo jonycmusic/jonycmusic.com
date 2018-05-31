@@ -7,4 +7,4 @@ script:
 - yarn build
 after_success:
 - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
-- curl --ftp-create-dirs -T dist/* --key /tmp/sftp_rsa sftp://${SFTP_USER}:${SFTP_PASSWORD}@${SFTP_SERVER}/${SFTP_PATH}
+- curl --ftp-create-dirs -T ./dist/*(om[1]) --key /tmp/sftp_rsa sftp://${SFTP_USER}:${SFTP_PASSWORD}@${SFTP_SERVER}/${SFTP_PATH}
