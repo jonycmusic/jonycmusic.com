@@ -1,0 +1,69 @@
+#player, #waveform { width: 100%; }
+
+#player { 
+    background:#fff;
+    position: fixed;
+    z-index:5;
+    bottom:0;
+    left:0;
+    display:inline-block;
+    max-height:100px;
+    text-align:left;
+    .trackInfo{
+        color:#000;
+        margin:0;
+        padding: 4px 7px;
+        font-size:.7em;
+        position:absolute;
+        top:-20px;
+        height:20px;
+        background:#fff;
+        z-index:-1;
+    }
+    .controls {
+        width:175px;
+        float:left;
+        padding: 2px 5px;
+        z-index:1;
+        div{
+            display: inline-block;
+            padding: 2px;
+            margin: 2px;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            line-height: 16px;
+            color: white;
+            opacity: 0.75;
+            cursor: pointer;
+            background: no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -ms-background-size: cover;
+            background-size: cover;
+            border: 1px solid black;
+        }
+        div:hover {
+            opacity: 1;
+            background-color: hsla(50%, 20%, 60%, .75);
+        }
+        .play {  background-image: url("../images/pause.svg"); }
+        .pause { background-image: url("../images/play.svg"); }
+        .stop { background-image: url("../images/stop.svg"); }
+        .next { background-image: url("../images/next.svg"); }
+        .prev { background-image: url("../images/prev.svg"); }
+
+    }
+}
+#waveform {
+    float:left;
+    height: 45px;
+    border-left: solid 1px #eee;
+    border-right: solid 1px #eee;
+
+    position: relative;
+    .buffer, .played, > img { position:absolute; width: 0%; height:100%; }
+    .buffer { background-color: hsla(50%, 20%, 60%, .75);}
+    .played { background-color: #333;}
+    > img {  width: 100%; }
+}

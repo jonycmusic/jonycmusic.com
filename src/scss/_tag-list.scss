@@ -1,0 +1,86 @@
+#tagLists{
+    position:fixed;
+    right:-500px;
+    top:5%;
+    font-size:1.1em;
+    height:75%;
+    transition: all .8s ;
+    -ms-transition: all .8s;
+    -moz-transition: all .8s;
+    -webkit-transition: all .8s;
+    -o-transition: all .8s;
+    z-index:5;
+
+    &.active{
+        right:0px !important;
+    }   
+    &.hide{
+        right:-500px !important;
+    }
+
+    button.filter-btn{
+        position:absolute;
+        top:15%;
+        background:#fff;
+        font-size:1.2em;
+        z-index:6;
+        border: 0;
+        padding:10px;
+        outline:none;
+        text-transform: uppercase;
+        cursor:pointer;
+        transform:rotate(270deg);
+        -ms-transform:rotate(270deg); /* IE 9 */
+        -moz-transform:rotate(270deg); /* Firefox */
+        -webkit-transform:rotate(270deg); /* Safari and Chrome */
+        -o-transform:rotate(270deg); /* Opera */
+    }
+    &:hover button.filter-btn,
+    button.filter-btn:hover{
+        background:#ccc;    
+    }
+    .tag-container{
+        overflow:auto;
+        max-height:100%;
+        padding:0 5%;
+        text-align:center;
+        background: rgba(0,0,0,.8);
+        .taglist-section{
+            padding:20px 0;
+        }
+        h3{
+            margin-top:0;
+        }
+    }
+    ul{
+        list-style:none;
+        padding:0;
+        margin:0;
+        li{
+            a{
+                transition: transform .3s;
+                -ms-transition: -ms-transform .3s;
+                -moz-transition: -moz-transform .3s;
+                -webkit-transition: -webkit-transform .3s;
+                -o-transition: -o-transform .3s;
+                display:block;
+            }
+            a:hover{
+                text-decoration:underline;
+                transform: scale3d(1.2,1.2,1.2);
+                -o-transform: scale3d(1.2,1.2,1.2);
+                -ms-transform: scale3d(1.2,1.2,1.2);
+                -moz-transform: scale3d(1.2,1.2,1.2);
+                -webkit-transform: scale3d(1.2,1.2,1.2);
+            }
+            a.active{
+                color:#FCC;  
+            }
+            a.active:before{
+                content:"▸ ";
+                padding-left:3px;
+            }
+        }
+    }
+
+}

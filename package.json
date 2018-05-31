@@ -1,0 +1,43 @@
+{
+  "name": "jonycmusic.com",
+  "version": "1.0.0",
+  "description": "jonycmusic.com website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "webpack-dev-server --hot --progress --inline",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -R ./dist || true && mkdir dist",
+    "build": "yarn run clean && NODE_ENV=production node node_modules/.bin/webpack && cp -R assets/ dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/jonycheung/jonycmusic.com.git"
+  },
+  "keywords": [
+    "static",
+    "site"
+  ],
+  "author": "Jony Cheung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/jonycheung/jonycmusic.com/issues"
+  },
+  "homepage": "https://gitlab.com/jonycheung/jonycmusic.com#README",
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "css-loader": "^0.28.11",
+    "exports-loader": "^0.7.0",
+    "jquery": "^3.3.1",
+    "jquery.viewport": "^1.0.1",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "soundmanager2": "^2.97.20170602",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1"
+  }
+}
