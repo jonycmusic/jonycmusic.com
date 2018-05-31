@@ -4,5 +4,3 @@ install:
   - yarn
 script:
   - yarn build
-deploy:
- - echo "deploying"
