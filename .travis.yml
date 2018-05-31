@@ -9,8 +9,10 @@ script:
 env:
   global:
   - SFTP_KEY=[base64-encoded-rsa-key]
+  - SFTP_SERVER=[SFTP_SERVER]
+  - SFTP_PATH=[SFTP_PATH]
   - secure: rki7jXZ1tL6nC08UuwYpZMafrg9ZAo5XyGpHez7XVAVeqxzYqXFAwkb+bHOeTGTT5p6zkZAq8EpfXBWyQareSsUqyw/DGq3I95BnHKhIBZw/sItbA+f2Xs0GhgMD5Oz2DP+VUZovTVxsMf0F6bFido/rSjqoK/sPjSLQqkicW0dMjfzJCdO2W+X2O5q5p5/cSdPz9P89eXjEyULFFrJ+9w8+B39jwFFo7aFtAoihrl4DzKeaXFGVcJJvfhZhTZaZvYG1f/hQDmUvx4cDw9CCIf7sD7xZ7Xu2zEpVQovh9twQXaJ4lqLxoBvrjqfLU0dNSYTJrMJq3M3XnzOJR9tCp6qeiDAvdOph4rrUoSESteAHQe461jbejBOt2ExPjeclbhueoOPYFlSz8eZ/ZoIta/vOyN4+X/nQ9vHLG9FXT53op/pD42xFj9tT7T8QpPI51dtKacpazk6qLRRqilw7g8f3E4aKyVjiwqib7hImP8UwxJBDO66kg2BARUcJw53V1tngVUWeuJwaIHCwvyUkC294xFbHDXwLo4UOoYOrjBlFbHU9R7PdSuwVWwydjxz7Bq3Q/JU6B02ktYfOVYi5PfWJO/pv0n1tGg8yh2KUr5VbHpAgdnpKgpzHsq1RyHi1ipUwql/lZOL7wBHY68UwkwqqQfB2s99La9VtyOiRyv0=
   - secure: AXvw5sBztmKTwyusSImuAQw+a7WHNEGEwgxHlQ8ALE7Q8noXG18crW0NgBUWLF6P53lb4STZkBWMsJc1RDm+g3UTxCkSFg1rtHMnekfr/pN1F/vmv3TNSZXA580fOv9NOKtm6XNu3klLMMDRus5eFGlQtKRewtETGWPrP6WiGcQJh6xNmkzy3RUWqJNCjCZYKi/HGu6Cr+0qU8/s90WNR+iMKu4qqNJju0Xrd6YUaOYg4W/GiDTpooxC1QVHZ1PRMJk0BiXJPHdoKxRknE1dwZL4XKq3lIx29VvS2yOCegz1GSPp+qrFE7ylhV0CxlfhwTAaWjAS4jZs19mGaSggQaTuyyPRJwxWUDu/N8pp4UvsWMdO4hwfvbnt5cHDq0HBznRN1kkjrt6m3fAd1uICcGh5pjeuYMDkjZtOkW6dM6H7LoeE71pjytoFEbW3raFuXvf6HXp1nwsjLjqp7fErE+F/6bspejz8JyrqNlHoVcZDOMggGmgcHQxwCMaLe7Z/89eFV0lypxp0bjVgFDFY0Sc3kJgzX0MhLKQk82zHhBeNVXLja33mGsEu/bnIelaSHrPLJKV+ipXEmyQm/N1M0nL353IesMmZldpXuRC55vWkWged8ohpcRF5zrvE0kSGMwYODMz/pUgfJs43CFPh7dwmfy8XMV8zxoQsTeCojAo=
 after_success:
 - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
-- curl --ftp-create-dirs -T filename --key /tmp/sftp_rsa sftp://${SFTP_USER}:${SFTP_PASSWORD}@example.com/directory/filename
+- curl --ftp-create-dirs -T filename --key /tmp/sftp_rsa sftp://${SFTP_USER}:${SFTP_PASSWORD}@${SFTP_SERVER}/${SFTP_PATH}
