@@ -1,8 +1,7 @@
 language: node_js
 node_js:
-- '4'
+- '8.9'
 install:
-- npm install -g yarn
 - yarn
 script:
 - yarn build
