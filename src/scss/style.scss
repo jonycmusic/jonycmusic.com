@@ -159,6 +159,13 @@ ul.socialMenu{
 			padding-right:30%;
 			min-width:300px;
 		}
+		&.spotify{
+			iframe{
+				float:left;
+				margin:0 50px 0 0;
+				
+			}
+		}
 	}
 }
 #homepageSlideshow{
