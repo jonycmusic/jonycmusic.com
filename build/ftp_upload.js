@@ -13,7 +13,7 @@ var config = {
     exclude: ['dist/**/*.map'],     // e.g. exclude sourcemaps
     deleteRoot: false                // delete existing files at destination before uploading
 }
-console.log("Uploading files from "+ localDir +" to "+FTP_HOST+FTP_PATH)
+console.log("Uploading files from "+ localDir +" to "+process.env.FTP_HOST+process.env.FTP_PATH)
 // use with promises
 ftpDeploy.deploy(config)
     .then(res => console.log('Finished file upload.'))
