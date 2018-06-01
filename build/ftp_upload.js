@@ -8,9 +8,9 @@ var config = {
     host: process.env.FTP_HOST,
     port: 21,
     localRoot: __dirname + localDir,
-    remoteRoot: process.env.FTP_PATH, // /home2/jonath25/public_html/onlyjonathan.com/
+    remoteRoot: process.env.FTP_PATH, 
     include: ['*', '**/*'],      // this would upload everything except dot files
-    exclude: ['dist/**/*.map'],     // e.g. exclude sourcemaps
+    exclude: [],     
     deleteRoot: false                // delete existing files at destination before uploading
 }
 console.log("Uploading files from "+ localDir +" to "+process.env.FTP_HOST+process.env.FTP_PATH)
