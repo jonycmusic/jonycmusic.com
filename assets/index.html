@@ -46,7 +46,7 @@
 			<h1>JONY C &gt; Music</h1>
 			<ul class="socialMenu top">
 				<li class="twitter-button"><a href="//twitter.com/share" class="twitter-share-button" data-url="https://www.jonycmusic.com" data-related="jonycheung" data-count="none" data-lang="en" data-text="Check out the NEW official music site for @JonyCMusic!">Tweet</a></li>
-				<li class="like-button"><div class="fb-like" data-href="//jonycmusic.com/" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-colorscheme="dark"></div></li>
+				<li class="like-button"><div class="fb-like" data-href="http://www.jonycmusic.com" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div></li>
 				<li class="spotify-button"><iframe src="//open.spotify.com/follow/1/?uri=spotify:artist:3hZ1a3fITlTgCC3koU1U2P&size=basic&theme=light&show-count=0" width="200" height="28" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe></li>
 			</ul>
 		</nav>
@@ -168,11 +168,11 @@
 	<!-- Facebook -->
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1&appId=205235436203715";
-	  fjs.parentNode.insertBefore(js, fjs);
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=205235436203715&autoLogAppEvents=1';
+		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<!--Twitter-->
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -185,7 +185,7 @@
 	(function(){
 	  var fpw = document.createElement('script');
 	  fpw.async = true;
-	  fpw.src = '//connect.facebook.net/en_US/fp.js';
+	  fpw.src = 'https://connect.facebook.net/en_US/fp.js';
 	  var ref = document.getElementsByTagName('script')[0];
 	  ref.parentNode.insertBefore(fpw, ref);
 	})();
