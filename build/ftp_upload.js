@@ -1,14 +1,13 @@
 var FtpDeploy = require('./ftp-deploy');
-var ftpDeploy = new FtpDeploy(),
-    localDir = './../dist';
+var ftpDeploy = new FtpDeploy();
 
 var config = {
     user: process.env.FTP_USER,                   // NOTE that this was username in 1.x 
     password: process.env.FTP_PASS,           // optional, prompted if none given
     host: process.env.FTP_HOST,
     port: 21,
-    localRoot: __dirname + localDir,
-    remoteRoot: '/public_html/onlyjonathan.com',//process.env.FTP_PATH, 
+    localRoot: __dirname + process.env.FTP_LOCALPATH,
+    remoteRoot: process.env.FTP_PATH, 
     include: ['*', '**/*'],      // this would upload everything except dot files
     exclude: [],
     deleteRemote: false                // delete existing files at destination before uploading
