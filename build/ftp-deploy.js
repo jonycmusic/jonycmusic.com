@@ -6,7 +6,7 @@ const events = require("events");
 const Promise = require('bluebird');
 const fs = require('fs');
 
-var PromiseFtp = require("promise-ftp");
+var PromiseFtp = require("promise-sftp");
 const lib = require("./ftp-deploy-lib");
 
 
